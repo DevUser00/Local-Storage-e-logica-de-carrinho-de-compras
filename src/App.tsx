@@ -13,7 +13,7 @@ function App() {
             <Route index element={<Catalog />} />
             <Route path="catalog" element={<Catalog />} />
             <Route path="product-details/:productId" element={<ProductDetails />} />
-            
+            <Route path="catalog" element={<Catalog />} />
         </Route>
         <Route path="*" element={<Navigate to={"/"}/>} />
 
