@@ -1,4 +1,4 @@
-import { CART_KEY } from "../assets/utils/system";
+import { CART_KEY } from "../utils/system";
 import { OrderDTO } from "../models/order";
 
 export function save(cart: OrderDTO) {
@@ -7,6 +7,6 @@ export function save(cart: OrderDTO) {
 }
 
 export function get() : OrderDTO  {
-   const str = localStorage.getItem(CART_KEY) || '{"items"=[]}';
+   const str = localStorage.getItem(CART_KEY) || '{"items":[]}';
    return JSON.parse(str);
 }
