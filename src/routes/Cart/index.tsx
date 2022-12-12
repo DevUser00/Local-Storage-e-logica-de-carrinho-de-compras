@@ -1,5 +1,6 @@
 import './style.css'
 
+
 //Cart mockado
 const cart = {
    items: [
@@ -19,7 +20,6 @@ const cart = {
       }
    ]
 }
-
 
 function Cart() {
    return (
