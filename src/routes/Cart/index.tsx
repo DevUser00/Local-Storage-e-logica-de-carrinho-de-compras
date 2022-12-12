@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './style.css'
 import * as cartServices from '../../services/cart-services'
 import { OrderDTO, OrderItemDTO } from '../../models/order';
@@ -13,14 +13,8 @@ const item2: OrderItemDTO = new OrderItemDTO(
 
 
 function Cart() {
-   const cart: OrderDTO = new OrderDTO();
-   useEffect(() => {
-
-      cart.items.push(item1);
-      cart.items.push(item2)
-
-      cartServices.saveCart(cart)
-   }, []);
+   //instacia o "carrinho que tiver no localstorege"
+   const [card, setCard] = useState<OrderDTO>(cartServices.getCart())
 
    return (
       <>
@@ -28,7 +22,7 @@ function Cart() {
             <section id="cart-container-section" className="dsc-container">
                <div className="dsc-card dsc-mb20">
                   {
-
+                     
                      cart.items.map(item => (
                         <div key={item.productId} className="dsc-cart-item-container dsc-line-bottom">
                            <div className="dsc-cart-item-left">
