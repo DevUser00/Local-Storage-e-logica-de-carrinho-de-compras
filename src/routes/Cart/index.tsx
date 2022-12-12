@@ -14,7 +14,7 @@ const item2: OrderItemDTO = new OrderItemDTO(
 
 function Cart() {
    //instacia o "carrinho que tiver no localstorege"
-   const [card, setCard] = useState<OrderDTO>(cartServices.getCart())
+   const [cart, setCard] = useState<OrderDTO>(cartServices.getCart())
 
    return (
       <>
